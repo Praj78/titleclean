@@ -14,7 +14,6 @@ import ftfy
 from tqdm import tqdm
 from io import BytesIO
 import io
-import boto3
 import os
 from botocore.exceptions import NoCredentialsError
 from grpc import Status
@@ -24,6 +23,7 @@ app = FastAPI()
 
 load_dotenv()
 
+aws_s3_bucket = 'inputexcelsheet'
 s3bucket=os.getenv("aws_s3_bucket")
 AWS_S3_BUCKET =s3bucket
 aws_access_key_id= os.getenv("aws_access_key_id")
